@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-header" id="card-pedes-romani">
+        <h5 class="mb-0">
+            Pedes Romani
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pedes-romani" aria-expanded="true"
+                aria-controls="collapse-pedes-romani" (click)="togglePedesRomani()">
+                <i [class]="pedesRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-pedes-romani" class="collapse show" aria-labelledby="card-pedes-romani">
+        <div class="card-body">
+            <form #pedesRomaniForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Pedes</span>
+                            </div>
+                            <input type="number" min="0" step="1" aria-label="Pedes" class="form-control"
+                                [(ngModel)]="pedesRomani.pedes" (change)="roundPedesRomaniNumber()"
+                                name="pedes-romani-pedes">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="pedesRomani.semis"
+                                name="pedes-romani-semis" (change)="deletePedesRomaniResult()">
+                            <label class="form-check-label">
+                                Semis
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="custom-select" [(ngModel)]="pedesRomani.measure" name="power">
+                            <option *ngFor="let measure of conversionMeasures" [value]="measure"
+                                (change)="deletePedesRomaniResult()">
+                                {{measure}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!pedesRomani.pedes"
+                            (click)="convertPedesRomani()">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="pedesRomani.result"
+                            name="pedes-romani-risutato" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

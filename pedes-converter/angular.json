@@ -6,11 +6,10 @@
     "pedes-converter": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass",
+        "@schematics/angular:class": {
           "skipTests": true
         },
-        "@schematics/angular:class": {
+        "@schematics/angular:component": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
@@ -47,9 +46,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,7 +114,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -143,6 +145,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "pedes-converter"
 }
