@@ -16,7 +16,6 @@ export class PassusRomaniCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  
   roundPassusRomaniNumber(): void {
     this.passusRomani.passus = Math.floor(this.passusRomani.passus);
     this.deletePassusRomaniResult()

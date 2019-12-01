@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PedesRomaniCardComponent } from './home/cards/pedes-romani-card/pedes-romani-card.component';
 import { PassusRomaniCardComponent } from './home/cards/passus-romani-card/passus-romani-card.component';
+import { ModiumRomaniCardComponent } from './home/cards/modium-romani-card/modium-romani-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PassusRomaniCardComponent } from './home/cards/passus-romani-card/passu
     HomeComponent,
     NavBarComponent,
     PedesRomaniCardComponent,
-    PassusRomaniCardComponent
+    PassusRomaniCardComponent,
+    ModiumRomaniCardComponent
   ],
   imports: [
     BrowserModule,

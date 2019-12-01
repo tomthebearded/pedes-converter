@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header" id="card-modium-romani">
+        <h5 class="mb-0">
+            Modium Romani
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-modium-romani" aria-expanded="true"
+                aria-controls="collapse-modium-romani" (click)="toggleModiumRomani()">
+                <i [class]="modiumRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-modium-romani" class="collapse" aria-labelledby="card-modium-romani">
+        <div class="card-body">
+            <form #modiumRomaniForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Modium</span>
+                            </div>
+                            <input type="number" min="0" step="1" aria-label="Modium" class="form-control"
+                                [(ngModel)]="modiumRomani.modium" (change)="roundModiumRomaniNumber()"
+                                name="modium-romani-modium">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!modiumRomani.modium"
+                            (click)="convertModiumRomani()">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="modiumRomani.result"
+                            name="modium-romani-risutato" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

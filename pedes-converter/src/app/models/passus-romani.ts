@@ -3,7 +3,7 @@ export class PassusRomani {
     semis: boolean;
     result: string;
     measure: string = "m";
-    collapsed: boolean = false;
+    collapsed: boolean;
     
     constructor(collapsed: boolean){
         this.collapsed = collapsed;

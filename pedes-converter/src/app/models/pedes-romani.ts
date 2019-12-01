@@ -3,7 +3,7 @@ export class PedesRomani {
     semis: boolean;
     result: string;
     measure: string = "cm";
-    collapsed: boolean = false;
+    collapsed: boolean;
     
     constructor(collapsed: boolean){
         this.collapsed = collapsed;
