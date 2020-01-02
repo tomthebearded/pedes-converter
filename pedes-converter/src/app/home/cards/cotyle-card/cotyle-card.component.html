@@ -9,7 +9,7 @@
             </h5>
         </div>
         <div id="collapse-cotyle" class="collapse" aria-labelledby="card-cotyle"
-            data-parent="#accordion-roman">
+            data-parent="#accordion-greek">
             <div class="card-body">
                 <form #cotyleForm="ngForm">
                     <div class="form-row align-items-center">
@@ -18,7 +18,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Cotyle</span>
                                 </div>
-                                <input type="number" min="0" step="1" aria-label="Cotyle" class="form-control"
+                                <input type="number" min="0" step="1" class="form-control"
                                     [(ngModel)]="cotyle.modium" (change)="roundCotyleNumber()"
                                     name="cotyle-modium">
                             </div>

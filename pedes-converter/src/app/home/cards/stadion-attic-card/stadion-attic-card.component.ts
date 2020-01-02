@@ -25,7 +25,7 @@ export class StadionAtticCardComponent implements OnInit {
     let result: number;
     let stadion: number = this.stadionAttic.stadion;
 
-    result = this.stadionAttic.measure === "m" ? stadion * 29.6 : stadion * 0.296;
+    result = this.stadionAttic.measure === "m" ? stadion * 185 : stadion * 0.185;
     this.stadionAttic.result = result.toFixed(3);
   }
 

@@ -16,6 +16,8 @@ import { GreekMeasuresCardComponent } from './home/cards/greek-measures-card/gre
 import { PousAtticCardComponent } from './home/cards/pous-attic-card/pous-attic-card.component';
 import { StadionAtticCardComponent } from './home/cards/stadion-attic-card/stadion-attic-card.component';
 import { CotyleCardComponent } from './home/cards/cotyle-card/cotyle-card.component';
+import { StadiumRomaniCardComponent } from './home/cards/stadium-romani-card/stadium-romani-card.component';
+import { UnciaRomanaCardComponent } from './home/cards/uncia-romana-card/uncia-romana-card.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CotyleCardComponent } from './home/cards/cotyle-card/cotyle-card.compon
     GreekMeasuresCardComponent,
     PousAtticCardComponent,
     StadionAtticCardComponent,
-    CotyleCardComponent
+    CotyleCardComponent,
+    StadiumRomaniCardComponent,
+    UnciaRomanaCardComponent
   ],
   imports: [
     BrowserModule,

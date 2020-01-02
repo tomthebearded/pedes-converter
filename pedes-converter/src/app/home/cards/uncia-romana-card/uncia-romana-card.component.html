@@ -1,0 +1,45 @@
+<div class="card">
+        <div class="card-header" id="card-uncia-romana">
+            <h5 class="mb-0">
+                Uncia
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-uncia-romana"
+                    aria-expanded="true" aria-controls="collapse-uncia-romana" (click)="toggleUnciaRomana()">
+                    <i [class]="unciaRomana.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </h5>
+        </div>
+        <div id="collapse-uncia-romana" class="collapse" aria-labelledby="card-uncia-romana" data-parent="#accordion-roman">
+            <div class="card-body">
+                <form #unciaRomanaForm="ngForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Uncia</span>
+                                </div>
+                                <input type="number" min="0" step="1" class="form-control"
+                                    [(ngModel)]="unciaRomana.uncia" (change)="roundUnciaRomanaNumber()"
+                                    name="uncia-romana-uncia">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <select class="custom-select" [(ngModel)]="unciaRomana.measure" name="uncia-romana-measure"
+                                (change)="deleteUnciaRomanaResult()">
+                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                    {{measure}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" [disabled]="!unciaRomana.uncia"
+                                (click)="convertUnciaRomana()">Convert</button>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" [ngModel]="unciaRomana.result"
+                                name="uncia-romana-result" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
