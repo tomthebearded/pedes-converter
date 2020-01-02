@@ -1,0 +1,46 @@
+<div class="card">
+        <div class="card-header" id="card-stadion-attic">
+            <h5 class="mb-0">
+                Stadion Attic
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-stadion-attic"
+                    aria-expanded="true" aria-controls="collapse-stadion-attic" (click)="toggleStadionAttic()">
+                    <i [class]="stadionAttic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </h5>
+        </div>
+        <div id="collapse-stadion-attic" class="collapse show" aria-labelledby="card-stadion-attic"
+            data-parent="#accordion-greek">
+            <div class="card-body">
+                <form #stadionAtticForm="ngForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Stadion</span>
+                                </div>
+                                <input type="number" min="0" step="1" aria-label="Pedes" class="form-control"
+                                    [(ngModel)]="stadionAttic.stadion" (change)="roundStadionAtticNumber()"
+                                    name="stadion-attic-stadion">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <select class="custom-select" [(ngModel)]="stadionAttic.measure" name="stadion-attic-measure"
+                                (change)="deleteStadionAtticResult()">
+                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                    {{measure}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" [disabled]="!stadionAttic.stadion"
+                                (click)="convertStadionAttic()">Convert</button>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" [ngModel]="stadionAttic.result"
+                                name="stadion-attic-result" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

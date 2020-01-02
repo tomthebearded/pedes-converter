@@ -7,7 +7,9 @@ import { ModiumRomani } from '../../../models/modium-romani';
   styleUrls: ['./modium-romani-card.component.css']
 })
 export class ModiumRomaniCardComponent implements OnInit {
+
   modiumRomani: ModiumRomani = new ModiumRomani(true);
+  conversionMeasures: string[] = ["l", "kg"];
 
   constructor() { }
 
@@ -22,7 +24,7 @@ export class ModiumRomaniCardComponent implements OnInit {
   convertModiumRomani(): void {
     let result: number;
 
-    result = this.modiumRomani.modium * 8.733;
+    result = this.modiumRomani.measure === "l" ? this.modiumRomani.modium * 8.733 : this.modiumRomani.modium * 6.67;
     this.modiumRomani.result = result.toFixed(3);
   }
 
@@ -30,8 +32,8 @@ export class ModiumRomaniCardComponent implements OnInit {
     this.modiumRomani.result = null;
   }
 
-  toggleModiumRomani(){
-    if(this.modiumRomani.collapsed)
+  toggleModiumRomani() {
+    if (this.modiumRomani.collapsed)
       this.modiumRomani.collapsed = !this.modiumRomani.collapsed;
     else
       this.modiumRomani = new ModiumRomani(true);

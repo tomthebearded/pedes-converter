@@ -36,8 +36,8 @@ export class PassusRomaniCardComponent implements OnInit {
     this.passusRomani.result = null;
   }
 
-  togglePassusRomani(){
-    if(this.passusRomani.collapsed)
+  togglePassusRomani() {
+    if (this.passusRomani.collapsed)
       this.passusRomani.collapsed = !this.passusRomani.collapsed;
     else
       this.passusRomani = new PassusRomani(true);

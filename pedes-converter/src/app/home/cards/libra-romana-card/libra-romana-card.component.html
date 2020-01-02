@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header" id="card-libra-romana">
+        <h5 class="mb-0">
+            Libra
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-libra-romana"
+                aria-expanded="true" aria-controls="collapse-libra-romana" (click)="toggleLibraRomana()">
+                <i [class]="libraRomana.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-libra-romana" class="collapse" aria-labelledby="card-libra-romana" data-parent="#accordion-roman">
+        <div class="card-body">
+            <form #libraRomanaForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Libra</span>
+                            </div>
+                            <input type="number" min="0" step="1" aria-label="Passus" class="form-control"
+                                [(ngModel)]="libraRomana.libra" (change)="roundLibraRomanaNumber()"
+                                name="libra-romana-libra">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="custom-select" [(ngModel)]="libraRomana.measure" name="libra-romana-measure"
+                            (change)="deleteLibraRomanaResult()">
+                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                {{measure}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!libraRomana.libra"
+                            (click)="convertLibraRomana()">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="libraRomana.result"
+                            name="libra-romana-result" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="card">
+        <div class="card-header" id="card-cotyle">
+            <h5 class="mb-0">
+                Cotyle
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-cotyle"
+                    aria-expanded="true" aria-controls="collapse-cotyle" (click)="toggleCotyle()">
+                    <i [class]="cotyle.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </h5>
+        </div>
+        <div id="collapse-cotyle" class="collapse" aria-labelledby="card-cotyle"
+            data-parent="#accordion-roman">
+            <div class="card-body">
+                <form #cotyleForm="ngForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Cotyle</span>
+                                </div>
+                                <input type="number" min="0" step="1" aria-label="Cotyle" class="form-control"
+                                    [(ngModel)]="cotyle.modium" (change)="roundCotyleNumber()"
+                                    name="cotyle-modium">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <select class="custom-select" [(ngModel)]="cotyle.measure" name="passus-romani-measure"
+                                (change)="deleteCotyleResult()" disabled>
+                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                    {{measure}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" [disabled]="!cotyle.modium"
+                                (click)="convertCotyle()">Convert</button>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" [ngModel]="cotyle.result"
+                                name="cotyle-result" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

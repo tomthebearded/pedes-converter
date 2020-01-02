@@ -11,7 +11,7 @@ export class PedesRomaniCardComponent implements OnInit {
 
   pedesRomani: PedesRomani = new PedesRomani(false);
   conversionMeasures: string[] = ["cm", "m"];
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -37,8 +37,8 @@ export class PedesRomaniCardComponent implements OnInit {
     this.pedesRomani.result = null;
   }
 
-  togglePedesRomani(){
-    if(this.pedesRomani.collapsed)
+  togglePedesRomani() {
+    if (this.pedesRomani.collapsed)
       this.pedesRomani.collapsed = !this.pedesRomani.collapsed;
     else
       this.pedesRomani = new PedesRomani(true);

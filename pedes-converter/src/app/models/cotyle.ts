@@ -1,8 +1,8 @@
-export class ModiumRomani {
-    modium: number;
+export class Cotyle {
+    cotyle: number;
     result: string;
     measure: string = "l";
-    collapsed: boolean = true;
+    collapsed: boolean;
     
     constructor(collapsed: boolean){
         this.collapsed = collapsed;
