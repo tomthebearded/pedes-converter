@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header" id="card-greek-measures">
+        <h5 class="mb-0">
+            Greek Measures
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-greek-measures"
+                aria-expanded="true" aria-controls="collapse-greek-measures" (click)="toggleGreekMeasures()">
+                <i [class]="collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-greek-measures" class="collapse" aria-labelledby="card-greek-measures"
+        data-parent="#accordion-measures">
+        <div class="card-body">
+            <div id="accordion-greek">
+                <app-pous-doric-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-pous-doric-card>
+                <app-pous-attic-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-pous-attic-card>
+                <app-pous-ionic-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-pous-ionic-card>
+                <app-stadion-attic-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-stadion-attic-card>
+                <app-stadion-ionic-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-stadion-ionic-card>
+                <app-stadion-doric-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-stadion-doric-card>
+                <app-cotyle-card [greekCardsIds]="greekCardsIds" (messageToEmit)="getId($event)">
+                </app-cotyle-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-export class StadiumRomani {
-    stadium: number;
+export class StadionDoric {
+    stadion: number;
     result: string;
     measure: string = "m";
     collapsed: boolean;

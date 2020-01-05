@@ -1,11 +1,10 @@
 export class PousAttic {
-    pedes: number;
-    semis: boolean;
+    pous: number;
     result: string;
     measure: string = "cm";
     collapsed: boolean;
-    
-    constructor(collapsed: boolean){
+
+    constructor(collapsed: boolean) {
         this.collapsed = collapsed;
     }
 }

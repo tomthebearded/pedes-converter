@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header" id="card-pous-ionic">
+        <h5 class="mb-0">
+            Pous Ionic / Samnic
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-ionic"
+                aria-expanded="true" aria-controls="collapse-pous-ionic" (click)="togglePousIonic()">
+                <i [class]="pousIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-pous-ionic" class="collapse" aria-labelledby="card-pous-ionic"
+        data-parent="#accordion-greek">
+        <div class="card-body">
+            <form #pousIonicForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Pous</span>
+                            </div>
+                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousIonic.pous"
+                                (change)="roundPousIonicNumber()" name="pous-ionic-pous">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="custom-select" [(ngModel)]="pousIonic.measure" name="pous-ionic-measure"
+                            (change)="deletePousIonicResult()">
+                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                {{measure}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!pousIonic.pous"
+                            (click)="convertPousIonic()">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="pousIonic.result" name="pous-ionic-result"
+                            disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

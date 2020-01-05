@@ -1,0 +1,45 @@
+<div class="card">
+        <div class="card-header" id="card-pous-doric">
+            <h5 class="mb-0">
+                Pous Doric
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-doric"
+                    aria-expanded="true" aria-controls="collapse-pous-doric" (click)="togglePousDoric()">
+                    <i [class]="pousDoric.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </h5>
+        </div>
+        <div id="collapse-pous-doric" class="collapse" aria-labelledby="card-pous-doric"
+            data-parent="#accordion-greek">
+            <div class="card-body">
+                <form #pousDoricForm="ngForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Pous</span>
+                                </div>
+                                <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousDoric.pous"
+                                    (change)="roundPousDoricNumber()" name="pous-doric-pous">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <select class="custom-select" [(ngModel)]="pousDoric.measure" name="pous-doric-measure"
+                                (change)="deletePousDoricResult()">
+                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                    {{measure}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" [disabled]="!pousDoric.pous"
+                                (click)="convertPousDoric()">Convert</button>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" [ngModel]="pousDoric.result" name="pous-doric-result"
+                                disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

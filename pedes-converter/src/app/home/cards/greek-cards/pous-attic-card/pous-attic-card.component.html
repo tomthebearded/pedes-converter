@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header" id="card-pous-attic">
+        <h5 class="mb-0">
+            Pous Attic / Cicladic
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-attic"
+                aria-expanded="true" aria-controls="collapse-pous-attic" (click)="togglePousAttic()">
+                <i [class]="pousAttic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-pous-attic" class="collapse" aria-labelledby="card-pous-attic"
+        data-parent="#accordion-greek">
+        <div class="card-body">
+            <form #pousAtticForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Pous</span>
+                            </div>
+                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousAttic.pous"
+                                (change)="roundPousAtticNumber()" name="pous-attic-pous">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <select class="custom-select" [(ngModel)]="pousAttic.measure" name="pous-attic-measure"
+                            (change)="deletePousAtticResult()">
+                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                {{measure}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!pousAttic.pous"
+                            (click)="convertPousAttic()">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="pousAttic.result" name="pous-attic-result"
+                            disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

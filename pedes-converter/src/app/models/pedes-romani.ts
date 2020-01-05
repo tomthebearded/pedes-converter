@@ -4,8 +4,8 @@ export class PedesRomani {
     result: string;
     measure: string = "cm";
     collapsed: boolean;
-    
-    constructor(collapsed: boolean){
+
+    constructor(collapsed: boolean) {
         this.collapsed = collapsed;
     }
 }

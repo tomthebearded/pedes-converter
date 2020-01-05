@@ -1,5 +1,6 @@
-export class StadiumRomani {
-    stadium: number;
+export class ActusRomani {
+    actus: number;
+    semis: boolean;
     result: string;
     measure: string = "m";
     collapsed: boolean;

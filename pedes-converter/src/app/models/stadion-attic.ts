@@ -3,8 +3,8 @@ export class StadionAttic {
     result: string;
     measure: string = "m";
     collapsed: boolean;
-    
-    constructor(collapsed: boolean){
+
+    constructor(collapsed: boolean) {
         this.collapsed = collapsed;
     }
 }

@@ -1,7 +1,7 @@
-export class StadiumRomani {
-    stadium: number;
+export class PousIonic {
+    pous: number;
     result: string;
-    measure: string = "m";
+    measure: string = "cm";
     collapsed: boolean;
 
     constructor(collapsed: boolean) {

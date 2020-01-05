@@ -3,8 +3,8 @@ export class ModiumRomani {
     result: string;
     measure: string = "l";
     collapsed: boolean = true;
-    
-    constructor(collapsed: boolean){
+
+    constructor(collapsed: boolean) {
         this.collapsed = collapsed;
     }
 }

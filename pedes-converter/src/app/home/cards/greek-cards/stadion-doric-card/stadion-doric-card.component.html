@@ -1,0 +1,46 @@
+<div class="card">
+        <div class="card-header" id="card-stadion-doric">
+            <h5 class="mb-0">
+                Stadion Doric
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-stadion-doric"
+                    aria-expanded="true" aria-controls="collapse-stadion-doric" (click)="toggleStadionDoric()">
+                    <i [class]="stadionDoric.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </h5>
+        </div>
+        <div id="collapse-stadion-doric" class="collapse" aria-labelledby="card-stadion-doric"
+            data-parent="#accordion-greek">
+            <div class="card-body">
+                <form #stadionDoricForm="ngForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Stadion</span>
+                                </div>
+                                <input type="number" min="0" step="1" class="form-control"
+                                    [(ngModel)]="stadionDoric.stadion" (change)="roundStadionDoricNumber()"
+                                    name="stadion-doric-stadion">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <select class="custom-select" [(ngModel)]="stadionDoric.measure" name="stadion-doric-measure"
+                                (change)="deleteStadionDoricResult()">
+                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                                    {{measure}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" [disabled]="!stadionDoric.stadion"
+                                (click)="convertStadionDoric()">Convert</button>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" class="form-control" [ngModel]="stadionDoric.result"
+                                name="stadion-doric-result" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
