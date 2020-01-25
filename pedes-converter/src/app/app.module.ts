@@ -23,6 +23,8 @@ import { PousDoricCardComponent } from './home/cards/greek-cards/pous-doric-card
 import { PousIonicCardComponent } from './home/cards/greek-cards/pous-ionic-card/pous-ionic-card.component';
 import { StadionDoricCardComponent } from './home/cards/greek-cards/stadion-doric-card/stadion-doric-card.component';
 import { StadionIonicCardComponent } from './home/cards/greek-cards/stadion-ionic-card/stadion-ionic-card.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { StadionIonicCardComponent } from './home/cards/greek-cards/stadion-ioni
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
