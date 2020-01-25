@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <select class="custom-select" [(ngModel)]="libraRomana.measure" name="libra-romana-measure"
+                        <select class="selectpicker" [(ngModel)]="libraRomana.measure" name="libra-romana-measure"
                             (change)="deleteLibraRomanaResult()">
                             <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                 {{measure}}

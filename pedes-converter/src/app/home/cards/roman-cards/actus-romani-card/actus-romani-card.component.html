@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <select class="custom-select" [(ngModel)]="actusRomani.measure" name="actus-romani-measure"
+                            <select class="selectpicker" [(ngModel)]="actusRomani.measure" name="actus-romani-measure"
                                 (change)="deleteActusRomaniResult()">
                                 <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                     {{measure}}

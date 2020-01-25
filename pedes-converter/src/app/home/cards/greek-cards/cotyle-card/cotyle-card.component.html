@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <select class="custom-select" [(ngModel)]="cotyle.measure" name="passus-romani-measure"
+                            <select class="selectpicker" [(ngModel)]="cotyle.measure" name="passus-romani-measure"
                                 (change)="deleteCotyleResult()" disabled>
                                 <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                     {{measure}}

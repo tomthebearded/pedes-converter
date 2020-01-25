@@ -18,9 +18,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Passus</span>
                             </div>
-                            <input type="number" min="0" step="1" class="form-control"
-                                [(ngModel)]="passusRomani.passus" (change)="roundPassusRomaniNumber()"
-                                name="passus-romani-passus">
+                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="passusRomani.passus"
+                                (change)="roundPassusRomaniNumber()" name="passus-romani-passus">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -33,7 +32,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <select class="custom-select" [(ngModel)]="passusRomani.measure" name="passus-romani-measure"
+                        <select class="selectpicker" [(ngModel)]="passusRomani.measure" name="passus-romani-measure"
                             (change)="deletePassusRomaniResult()">
                             <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                 {{measure}}

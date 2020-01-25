@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <select class="custom-select" [(ngModel)]="pousAttic.measure" name="pous-attic-measure"
+                        <select class="selectpicker" [(ngModel)]="pousAttic.measure" name="pous-attic-measure"
                             (change)="deletePousAtticResult()">
                             <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                 {{measure}}

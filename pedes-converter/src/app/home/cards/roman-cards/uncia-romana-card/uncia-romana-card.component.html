@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <select class="custom-select" [(ngModel)]="unciaRomana.measure" name="uncia-romana-measure"
+                            <select class="selectpicker" [(ngModel)]="unciaRomana.measure" name="uncia-romana-measure"
                                 (change)="deleteUnciaRomanaResult()">
                                 <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                     {{measure}}

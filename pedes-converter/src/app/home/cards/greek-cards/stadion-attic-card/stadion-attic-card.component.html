@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <select class="custom-select" [(ngModel)]="stadionAttic.measure" name="stadion-attic-measure"
+                            <select class="selectpicker" [(ngModel)]="stadionAttic.measure" name="stadion-attic-measure"
                                 (change)="deleteStadionAtticResult()">
                                 <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                     {{measure}}

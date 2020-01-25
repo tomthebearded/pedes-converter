@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <select class="custom-select" [(ngModel)]="pousDoric.measure" name="pous-doric-measure"
+                            <select class="selectpicker" [(ngModel)]="pousDoric.measure" name="pous-doric-measure"
                                 (change)="deletePousDoricResult()">
                                 <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                     {{measure}}

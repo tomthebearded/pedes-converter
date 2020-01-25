@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-select/sass/bootstrap-select.scss";
 
 $fa-font-path: "~node_modules/@fortawesome/fontawesome-free/webfonts/";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -19,4 +20,13 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.bootstrap-select{
+  width: auto!important;
+  .dropdown-toggle {
+    background-color: #E9ECEE!important;
+    border: 1px solid #ced4da!important;
+    border-radius: 0.25rem!important;
+  }
 }

@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <select class="custom-select" [(ngModel)]="modiumRomani.measure" name="passus-romani-measure"
+                        <select class="selectpicker" [(ngModel)]="modiumRomani.measure" name="passus-romani-measure"
                             (change)="deleteModiumRomaniResult()">
                             <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                 {{measure}}

@@ -18,9 +18,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Pedes</span>
                             </div>
-                            <input type="number" min="0" step="1" class="form-control"
-                                [(ngModel)]="pedesRomani.pedes" (change)="roundPedesRomaniNumber()"
-                                name="pedes-romani-pedes">
+                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pedesRomani.pedes"
+                                (change)="roundPedesRomaniNumber()" name="pedes-romani-pedes">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -33,7 +32,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <select class="custom-select" [(ngModel)]="pedesRomani.measure" name="pedes-romani-measure"
+                        <select class="selectpicker" [(ngModel)]="pedesRomani.measure" name="pedes-romani-measure"
                             (change)="deletePedesRomaniResult()">
                             <option *ngFor="let measure of conversionMeasures" [value]="measure">
                                 {{measure}}
