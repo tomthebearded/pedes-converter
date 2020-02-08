@@ -8,7 +8,6 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class NavBarComponent implements OnInit {
   title = 'pedes-converter';
   deferredPrompt: any;
-  showButton: boolean = false;
 
   constructor() { }
 
@@ -17,15 +16,6 @@ export class NavBarComponent implements OnInit {
 
   @HostListener('window:beforeinstallprompt', ['$event']) onbeforeinstallprompt(e): void {
     this.deferredPrompt = e;
-    this.deferredPrompt.prompt();
-    this.deferredPrompt.userChoice
-      .then(() => {
-        this.deferredPrompt = null;
-      });
-  }
-
-  addToHomeScreen(): void {
-    this.showButton = false;
     this.deferredPrompt.prompt();
     this.deferredPrompt.userChoice
       .then(() => {
