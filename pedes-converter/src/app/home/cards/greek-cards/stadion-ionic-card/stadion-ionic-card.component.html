@@ -3,7 +3,8 @@
         <h5 class="mb-0">
             Stadion Ionic / Samnic
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-stadion-ionic"
-                aria-expanded="true" aria-controls="collapse-stadion-ionic" (click)="toggleStadionIonic()">
+                aria-expanded="true" aria-controls="collapse-stadion-ionic" (click)="toggleStadionIonic()"
+                aria-label="ionic or samnic stadion card collapses">
                 <i [class]="stadionIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
@@ -11,33 +12,30 @@
     <div id="collapse-stadion-ionic" class="collapse" aria-labelledby="card-stadion-ionic"
         data-parent="#accordion-greek">
         <div class="card-body">
-            <form #stadionIonicForm="ngForm">
+            <form role="form" #stadionIonicForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Stadion</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control"
-                                [(ngModel)]="stadionIonic.stadion" (change)="roundStadionIonicNumber()"
-                                name="stadion-ionic-stadion">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="stadionIonic.stadion"
+                            (change)="roundStadionIonicNumber()" name="stadion-ionic-stadion"
+                            aria-label="ionic or samnic stadion" aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="stadionIonic.measure" name="stadion-ionic-measure"
-                            (change)="deleteStadionIonicResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="stadionIonic.measure"
+                            name="stadion-ionic-measure" (change)="deleteStadionIonicResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!stadionIonic.stadion"
-                            (click)="convertStadionIonic()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!stadionIonic.stadion" role="button"
+                            (click)="convertStadionIonic()" aria-label="convert"
+                            [attr.aria-disabled]="!stadionIonic.stadion">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="stadionIonic.result"
-                            name="stadion-ionic-result" disabled>
+                            name="stadion-ionic-result" disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

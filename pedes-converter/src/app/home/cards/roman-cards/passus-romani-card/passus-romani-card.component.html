@@ -3,7 +3,8 @@
         <h5 class="mb-0">
             Passus
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-passus-romani"
-                aria-expanded="true" aria-controls="collapse-passus-romani" (click)="togglePassusRomani()">
+                aria-expanded="true" aria-controls="collapse-passus-romani" (click)="togglePassusRomani()"
+                aria-label="passus card collapse">
                 <i [class]="passusRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
@@ -11,41 +12,36 @@
     <div id="collapse-passus-romani" class="collapse" aria-labelledby="card-passus-romani"
         data-parent="#accordion-roman">
         <div class="card-body">
-            <form #passusRomaniForm="ngForm">
+            <form role="form" #passusRomaniForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Passus</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="passusRomani.passus"
-                                (change)="roundPassusRomaniNumber()" name="passus-romani-passus">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="passusRomani.passus"
+                            (change)="roundPassusRomaniNumber()" name="passus-romani-passus" aria-label="passus"
+                            aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" [(ngModel)]="passusRomani.semis"
-                                name="passus-romani-semis" (change)="deletePassusRomaniResult()">
-                            <label class="form-check-label">
-                                Semis
-                            </label>
-                        </div>
+                        <button type="button" name="passus-romani-semis" class="form-control btn-primary"
+                            (click)="toggleSemis()" role="button">
+                            <i [class]="passusRomani.semis ? 'fas fa-toggle-on' : 'fas fa-toggle-off'"></i>
+                            Semis</button>
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="passusRomani.measure" name="passus-romani-measure"
-                            (change)="deletePassusRomaniResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="passusRomani.measure"
+                            name="passus-romani-measure" (change)="deletePassusRomaniResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!passusRomani.passus"
-                            (click)="convertPassusRomani()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!passusRomani.passus" role="button"
+                            (click)="convertPassusRomani()" aria-label="convert"
+                            [attr.aria-disabled]="!passusRomani.passus">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="passusRomani.result"
-                            name="passus-romani-result" disabled>
+                            name="passus-romani-result" disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

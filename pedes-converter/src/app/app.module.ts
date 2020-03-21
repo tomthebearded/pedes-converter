@@ -25,6 +25,7 @@ import { StadionDoricCardComponent } from './home/cards/greek-cards/stadion-dori
 import { StadionIonicCardComponent } from './home/cards/greek-cards/stadion-ionic-card/stadion-ionic-card.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BibliographyComponent } from './bibliography/bibliography.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { environment } from '../environments/environment';
     PousDoricCardComponent,
     PousIonicCardComponent,
     StadionDoricCardComponent,
-    StadionIonicCardComponent
+    StadionIonicCardComponent,
+    BibliographyComponent
   ],
   imports: [
     BrowserModule,

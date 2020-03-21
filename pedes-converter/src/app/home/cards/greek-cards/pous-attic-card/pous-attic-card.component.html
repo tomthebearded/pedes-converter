@@ -1,42 +1,40 @@
 <div class="card">
     <div class="card-header" id="card-pous-attic">
         <h5 class="mb-0">
-            Pous Attic / Cicladic
+            Attic / Cicladic Foot
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-attic"
-                aria-expanded="true" aria-controls="collapse-pous-attic" (click)="togglePousAttic()">
+                aria-expanded="true" aria-controls="collapse-pous-attic" (click)="togglePousAttic()"
+                aria-label="attic or cicladic foot card collapse">
                 <i [class]="pousAttic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
     </div>
-    <div id="collapse-pous-attic" class="collapse" aria-labelledby="card-pous-attic"
-        data-parent="#accordion-greek">
+    <div id="collapse-pous-attic" class="collapse" aria-labelledby="card-pous-attic" data-parent="#accordion-greek">
         <div class="card-body">
-            <form #pousAtticForm="ngForm">
+            <form role="form" #pousAtticForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Pous</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousAttic.pous"
-                                (change)="roundPousAtticNumber()" name="pous-attic-pous">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousAttic.pous"
+                            (change)="roundPousAtticNumber()" name="pous-attic-pous" aria-label="attic or cicladic foot"
+                            aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="pousAttic.measure" name="pous-attic-measure"
-                            (change)="deletePousAtticResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="pousAttic.measure"
+                            name="pous-attic-measure" (change)="deletePousAtticResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!pousAttic.pous"
-                            (click)="convertPousAttic()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!pousAttic.pous" role="button"
+                            (click)="convertPousAttic()" aria-label="convert"
+                            [attr.aria-disabled]="!pousAttic.pous">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="pousAttic.result" name="pous-attic-result"
-                            disabled>
+                            disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

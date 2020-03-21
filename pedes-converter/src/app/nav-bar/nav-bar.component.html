@@ -1,18 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNav" aria-expanded="true" aria-label="toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" role="menubar">
             <li class="nav-item">
-                <a class="navbar-brand" routerLink="">PedesConverter</a>
+                <a class="navbar-brand" role="menuitem" aria-haspopup="false" aria-expanded="false"
+                    routerLink="">PedesConverter</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/about">About</a>
+                <a class="nav-link" role="menuitem" aria-haspopup="false" aria-expanded="false"
+                    routerLink="/bibliography">Bibliography</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/bibliography">Bibliography</a>
+                <a class="nav-link" role="menuitem" aria-haspopup="false" aria-expanded="false"
+                    routerLink="/about">About</a>
             </li>
         </ul>
     </div>

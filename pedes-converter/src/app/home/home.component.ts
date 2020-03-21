@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  cardsIds: number[] = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getId(id: number) {
+    this.cardsIds = [1, 2].filter(i => i !== id);
   }
 }

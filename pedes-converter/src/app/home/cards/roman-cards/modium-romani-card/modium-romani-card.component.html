@@ -3,7 +3,8 @@
         <h5 class="mb-0">
             Modium
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-modium-romani"
-                aria-expanded="true" aria-controls="collapse-modium-romani" (click)="toggleModiumRomani()">
+                aria-expanded="true" aria-controls="collapse-modium-romani" (click)="toggleModiumRomani()"
+                aria-label="modium card collapse">
                 <i [class]="modiumRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
@@ -11,33 +12,30 @@
     <div id="collapse-modium-romani" class="collapse" aria-labelledby="card-modium-romani"
         data-parent="#accordion-roman">
         <div class="card-body">
-            <form #modiumRomaniForm="ngForm">
+            <form role="form" #modiumRomaniForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Modium</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control"
-                                [(ngModel)]="modiumRomani.modium" (change)="roundModiumRomaniNumber()"
-                                name="modium-romani-modium">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="modiumRomani.modium"
+                            (change)="roundModiumRomaniNumber()" name="modium-romani-modium" aria-label="modium"
+                            aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="modiumRomani.measure" name="passus-romani-measure"
-                            (change)="deleteModiumRomaniResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="modiumRomani.measure"
+                            name="passus-romani-measure" (change)="deleteModiumRomaniResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!modiumRomani.modium"
-                            (click)="convertModiumRomani()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!modiumRomani.modium" role="button"
+                            (click)="convertModiumRomani()" aria-label="convert"
+                            [attr.aria-disabled]="!modiumRomani.modium">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="modiumRomani.result"
-                            name="modium-romani-result" disabled>
+                            name="modium-romani-result" disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

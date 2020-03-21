@@ -49,6 +49,11 @@ export class PedesRomaniCardComponent implements OnInit {
     this.pedesRomani.result = result.toFixed(3);
   }
 
+  toggleSemis(): void {
+    this.pedesRomani.semis = !this.pedesRomani.semis;
+    this.deletePedesRomaniResult();
+  }
+
   deletePedesRomaniResult(): void {
     this.pedesRomani.result = null;
   }

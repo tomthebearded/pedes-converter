@@ -1,4 +1,8 @@
 <div id="accordion-measures">
-    <app-roman-measures-card></app-roman-measures-card>
-    <app-greek-measures-card></app-greek-measures-card>
+    <div class="col-md-12">
+        <app-roman-measures-card [cardsIds]="cardsIds" (messageToEmit)="getId($event)"></app-roman-measures-card>
+    </div>
+    <div class="col-md-12">
+        <app-greek-measures-card [cardsIds]="cardsIds" (messageToEmit)="getId($event)"></app-greek-measures-card>
+    </div>
 </div>

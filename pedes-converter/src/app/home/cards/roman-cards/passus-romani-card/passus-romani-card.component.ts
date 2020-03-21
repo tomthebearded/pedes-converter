@@ -48,6 +48,11 @@ export class PassusRomaniCardComponent implements OnInit {
     this.passusRomani.result = result.toFixed(3);
   }
 
+  toggleSemis(): void {
+    this.passusRomani.semis = !this.passusRomani.semis;
+    this.deletePassusRomaniResult();
+  }
+
   deletePassusRomaniResult(): void {
     this.passusRomani.result = null;
   }

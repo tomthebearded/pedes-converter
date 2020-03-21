@@ -1,42 +1,39 @@
 <div class="card">
     <div class="card-header" id="card-pous-ionic">
-        <h5 class="mb-0">
-            Pous Ionic / Samnic
+        <h5 class="mb-0">Ionic / Samnic Foot
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-ionic"
-                aria-expanded="true" aria-controls="collapse-pous-ionic" (click)="togglePousIonic()">
+                aria-expanded="true" aria-controls="collapse-pous-ionic" (click)="togglePousIonic()"
+                aria-label="ionic or samnic foot card collapse">
                 <i [class]="pousIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
     </div>
-    <div id="collapse-pous-ionic" class="collapse" aria-labelledby="card-pous-ionic"
-        data-parent="#accordion-greek">
+    <div id="collapse-pous-ionic" class="collapse" aria-labelledby="card-pous-ionic" data-parent="#accordion-greek">
         <div class="card-body">
-            <form #pousIonicForm="ngForm">
+            <form role="form" #pousIonicForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Pous</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousIonic.pous"
-                                (change)="roundPousIonicNumber()" name="pous-ionic-pous">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pousIonic.pous"
+                            (change)="roundPousIonicNumber()" name="pous-ionic-pous" aria-label="ionic or samic foot"
+                            aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="pousIonic.measure" name="pous-ionic-measure"
-                            (change)="deletePousIonicResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="pousIonic.measure"
+                            name="pous-ionic-measure" (change)="deletePousIonicResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!pousIonic.pous"
-                            (click)="convertPousIonic()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!pousIonic.pous" role="button"
+                            (click)="convertPousIonic()" aria-label="convert"
+                            [attr.aria-disabled]="!pousIonic.pous">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="pousIonic.result" name="pous-ionic-result"
-                            disabled>
+                            disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

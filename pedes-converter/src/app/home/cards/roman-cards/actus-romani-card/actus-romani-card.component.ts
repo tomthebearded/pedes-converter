@@ -48,6 +48,11 @@ export class ActusRomaniCardComponent implements OnInit {
     this.actusRomani.result = result.toFixed(3);
   }
 
+  toggleSemis(): void {
+    this.actusRomani.semis = !this.actusRomani.semis;
+    this.deleteActusRomaniResult();
+  }
+
   deleteActusRomaniResult(): void {
     this.actusRomani.result = null;
   }

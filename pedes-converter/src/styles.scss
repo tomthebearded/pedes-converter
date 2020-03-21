@@ -7,9 +7,53 @@ $fa-font-path: "~node_modules/@fortawesome/fontawesome-free/webfonts/";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
+$background-color: black;
+$background-light-color: #494949;
+$primary-color: #eab01d;
+$secondary-color: #c4a966;
+
 body {
   margin: 0;
   height: 100%;
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+a {
+  color: $primary-color !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../src/assets/icons/Pedes_512x512.png") !important;
+}
+
+.nav-link {
+  color: $secondary-color !important;
+
+  @include hover-focus() {
+    color: $primary-color !important;
+  }
+}
+
+.btn-link {
+  color: $primary-color !important;
+}
+
+.btn-primary {
+  color: black !important;
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
+  &:disabled {
+    background-color: $secondary-color !important;
+    border-color: $secondary-color !important;
+  }
+}
+
+.card {
+  background-color: $background-color;
+  .card-header {
+    background-color: $background-light-color;
+  }
 }
 
 .col-auto {
@@ -22,11 +66,29 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.bootstrap-select{
-  width: auto!important;
+a.link {
+  color: $secondary-color!important;
+}
+
+.bootstrap-select {
+  width: auto !important;
   .dropdown-toggle {
-    background-color: #E9ECEE!important;
-    border: 1px solid #ced4da!important;
-    border-radius: 0.25rem!important;
+    background-color: #e9ecee !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+  }
+  .dropdown-item {
+    color: black !important;
+    &:active {
+      background-color: $primary-color !important;
+      border: 1px solid $primary-color !important;
+    }
+    &.active {
+      background-color: $primary-color !important;
+      border: 1px solid $primary-color !important;
+    }
+    &:focus {
+      outline-color: $primary-color;
+    }
   }
 }

@@ -3,7 +3,8 @@
         <h5 class="mb-0">
             Pedes
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pedes-romani"
-                aria-expanded="true" aria-controls="collapse-pedes-romani" (click)="togglePedesRomani()">
+                aria-expanded="true" aria-controls="collapse-pedes-romani" (click)="togglePedesRomani()"
+                aria-label="pedes card collapse">
                 <i [class]="pedesRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
             </button>
         </h5>
@@ -11,41 +12,36 @@
     <div id="collapse-pedes-romani" class="collapse show" aria-labelledby="card-pedes-romani"
         data-parent="#accordion-roman">
         <div class="card-body">
-            <form #pedesRomaniForm="ngForm">
+            <form role="form" #pedesRomaniForm="ngForm">
                 <div class="form-row align-items-center">
                     <div class="col-auto">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Pedes</span>
-                            </div>
-                            <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pedesRomani.pedes"
-                                (change)="roundPedesRomaniNumber()" name="pedes-romani-pedes">
-                        </div>
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="pedesRomani.pedes"
+                            (change)="roundPedesRomaniNumber()" name="pedes-romani-pedes" aria-label="pedes"
+                            aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" [(ngModel)]="pedesRomani.semis"
-                                name="pedes-romani-semis" (change)="deletePedesRomaniResult()">
-                            <label class="form-check-label">
-                                Semis
-                            </label>
-                        </div>
+                        <button type="button" name="pedes-romani-semis" class="form-control btn-primary"
+                            (click)="toggleSemis()" role="button">
+                            <i [class]="pedesRomani.semis ? 'fas fa-toggle-on' : 'fas fa-toggle-off'"></i>
+                            Semis</button>
                     </div>
                     <div class="col-auto">
-                        <select class="selectpicker" [(ngModel)]="pedesRomani.measure" name="pedes-romani-measure"
-                            (change)="deletePedesRomaniResult()">
-                            <option *ngFor="let measure of conversionMeasures" [value]="measure">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="pedesRomani.measure"
+                            name="pedes-romani-measure" (change)="deletePedesRomaniResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
                                 {{measure}}
                             </option>
                         </select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!pedesRomani.pedes"
-                            (click)="convertPedesRomani()">Convert</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!pedesRomani.pedes" role="button"
+                            (click)="convertPedesRomani()" aria-label="convert"
+                            [attr.aria-disabled]="!pedesRomani.pedes">Convert</button>
                     </div>
                     <div class="col-auto">
                         <input type="number" class="form-control" [ngModel]="pedesRomani.result"
-                            name="pedes-romani-result" disabled>
+                            name="pedes-romani-result" disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>
             </form>

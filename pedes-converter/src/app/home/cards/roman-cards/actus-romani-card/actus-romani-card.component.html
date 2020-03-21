@@ -1,55 +1,49 @@
 <div class="card">
-        <div class="card-header" id="card-actus-romani">
-            <h5 class="mb-0">
-                Actus
-                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-actus-romani"
-                    aria-expanded="true" aria-controls="collapse-actus-romani" (click)="toggleActusRomani()">
-                    <i [class]="actusRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-                </button>
-            </h5>
-        </div>
-        <div id="collapse-actus-romani" class="collapse" aria-labelledby="card-actus-romani"
-            data-parent="#accordion-roman">
-            <div class="card-body">
-                <form #actusRomaniForm="ngForm">
-                    <div class="form-row align-items-center">
-                        <div class="col-auto">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Actus</span>
-                                </div>
-                                <input type="number" min="0" step="1" class="form-control"
-                                    [(ngModel)]="actusRomani.actus" (change)="roundActusRomaniNumber()"
-                                    name="actus-romani-actus">
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" [(ngModel)]="actusRomani.semis"
-                                    name="actus-romani-semis" (change)="deleteActusRomaniResult()">
-                                <label class="form-check-label">
-                                    Semis
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <select class="selectpicker" [(ngModel)]="actusRomani.measure" name="actus-romani-measure"
-                                (change)="deleteActusRomaniResult()">
-                                <option *ngFor="let measure of conversionMeasures" [value]="measure">
-                                    {{measure}}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-primary" [disabled]="!actusRomani.actus"
-                                (click)="convertActusRomani()">Convert</button>
-                        </div>
-                        <div class="col-auto">
-                            <input type="number" class="form-control" [ngModel]="actusRomani.result"
-                                name="actus-romani-result" disabled>
-                        </div>
+    <div class="card-header" id="card-actus-romani">
+        <h5 class="mb-0">
+            Actus
+            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-actus-romani"
+                aria-expanded="true" aria-controls="collapse-actus-romani" (click)="toggleActusRomani()"
+                aria-label="actus card collapse">
+                <i [class]="actusRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+            </button>
+        </h5>
+    </div>
+    <div id="collapse-actus-romani" class="collapse" aria-labelledby="card-actus-romani" data-parent="#accordion-roman">
+        <div class="card-body">
+            <form role="form" #actusRomaniForm="ngForm">
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <input type="number" min="0" step="1" class="form-control" [(ngModel)]="actusRomani.actus"
+                            (change)="roundActusRomaniNumber()" name="actus-romani-actus" aria-label="actus"
+                            aria-required="true">
                     </div>
-                </form>
-            </div>
+                    <div class="col-auto">
+                        <button type="button" name="actus-romani-semis" class="form-control btn-primary"
+                            (click)="toggleSemis()" role="button">
+                            <i [class]="actusRomani.semis ? 'fas fa-toggle-on' : 'fas fa-toggle-off'"></i>
+                            Semis</button>
+                    </div>
+                    <div class="col-auto">
+                        <select role="listbox" class="selectpicker" [(ngModel)]="actusRomani.measure"
+                            name="actus-romani-measure" (change)="deleteActusRomaniResult()" aria-label="measures">
+                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
+                                [attr.aria-label]="measure">
+                                {{measure}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary" [disabled]="!actusRomani.actus" role="button"
+                            (click)="convertActusRomani()" aria-label="convert"
+                            [attr.aria-disabled]="!actusRomani.actus">Convert</button>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" class="form-control" [ngModel]="actusRomani.result"
+                            name="actus-romani-result" disabled aria-disabled="true" aria-label="result">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
