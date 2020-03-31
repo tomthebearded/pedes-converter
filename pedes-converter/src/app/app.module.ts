@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -23,9 +26,8 @@ import { PousDoricCardComponent } from './home/cards/greek-cards/pous-doric-card
 import { PousIonicCardComponent } from './home/cards/greek-cards/pous-ionic-card/pous-ionic-card.component';
 import { StadionDoricCardComponent } from './home/cards/greek-cards/stadion-doric-card/stadion-doric-card.component';
 import { StadionIonicCardComponent } from './home/cards/greek-cards/stadion-ionic-card/stadion-ionic-card.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { BibliographyComponent } from './bibliography/bibliography.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { BibliographyComponent } from './bibliography/bibliography.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgSelectModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],

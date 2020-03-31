@@ -20,16 +20,12 @@
                             aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select role="listbox" class="selectpicker" [(ngModel)]="stadionDoric.measure"
-                            name="stadion-doric-measure" (change)="deleteStadionDoricResult()" aria-label="measures">
-                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
-                                [attr.aria-label]="measure">
-                                {{measure}}
-                            </option>
-                        </select>
+                        <ng-select [items]="conversionMeasures" name="stadion-doric-measure" [clearable]="false"
+                            [(ngModel)]="stadionDoric.measure" (change)="deleteStadionDoricResult()">
+                        </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!stadionDoric.stadion" role="button"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!stadionDoric.stadion" role="button"
                             (click)="convertStadionDoric()" aria-label="convert"
                             [attr.aria-disabled]="!stadionDoric.stadion">Convert</button>
                     </div>

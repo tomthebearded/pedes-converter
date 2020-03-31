@@ -19,22 +19,18 @@
                             aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <button type="button" name="actus-romani-semis" class="form-control btn-primary"
+                        <button type="button" name="actus-romani-semis" class="form-control btn btn-primary"
                             (click)="toggleSemis()" role="button">
                             <i [class]="actusRomani.semis ? 'fas fa-toggle-on' : 'fas fa-toggle-off'"></i>
                             Semis</button>
                     </div>
                     <div class="col-auto">
-                        <select role="listbox" class="selectpicker" [(ngModel)]="actusRomani.measure"
-                            name="actus-romani-measure" (change)="deleteActusRomaniResult()" aria-label="measures">
-                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
-                                [attr.aria-label]="measure">
-                                {{measure}}
-                            </option>
-                        </select>
+                        <ng-select [items]="conversionMeasures" name="actus-romani-measure" [clearable]="false"
+                            [(ngModel)]="actusRomani.measure" (change)="deleteActusRomaniResult()">
+                        </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!actusRomani.actus" role="button"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!actusRomani.actus" role="button"
                             (click)="convertActusRomani()" aria-label="convert"
                             [attr.aria-disabled]="!actusRomani.actus">Convert</button>
                     </div>

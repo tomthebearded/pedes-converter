@@ -18,16 +18,12 @@
                             aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select role="listbox" class="selectpicker" [(ngModel)]="pousDoric.measure"
-                            name="pous-doric-measure" (change)="deletePousDoricResult()" aria-label="measures">
-                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
-                                [attr.aria-label]="measure">
-                                {{measure}}
-                            </option>
-                        </select>
+                        <ng-select [items]="conversionMeasures" name="pous-doric-measure" [clearable]="false"
+                            [(ngModel)]="pousDoric.measure" (change)="deletePousDoricResult()">
+                        </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!pousDoric.pous" role="button"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!pousDoric.pous" role="button"
                             (click)="convertPousDoric()" aria-label="convert"
                             [attr.aria-disabled]="!pousDoric.pous">Convert</button>
                     </div>

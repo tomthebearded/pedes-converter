@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="true" aria-label="toggle navigation">
+    <button class="navbar-toggler" type="button" aria-label="toggle navigation"
+        (click)="isCollapsed = !isCollapsed">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" role="menubar">
+    <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{collapse: isCollapsed}" [attr.aria-expanded]="!isCollapsed">
+        <ul class="navbar-nav" role="menubar" (click)="isCollapsed = !isCollapsed">
             <li class="nav-item">
                 <a class="navbar-brand" role="menuitem" aria-haspopup="false" aria-expanded="false"
-                    data-toggle="collapse" data-target="#navbarNav" routerLink="">PedesConverter</a>
+                    data-toggle="collapse" data-target=".navbar-collapse.show" routerLink="">PedesConverter</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" role="menuitem" aria-haspopup="false" aria-expanded="false" data-toggle="collapse"
-                    data-target="#navbarNav" routerLink="/bibliography">Bibliography</a>
+                    data-target=".navbar-collapse.show" routerLink="/bibliography">Bibliography</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" role="menuitem" aria-haspopup="false" aria-expanded="false" data-toggle="collapse"
-                    data-target="#navbarNav" routerLink="/about">About</a>
+                    data-target=".navbar-collapse.show" routerLink="/about">About</a>
             </li>
         </ul>
     </div>

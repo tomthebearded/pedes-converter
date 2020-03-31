@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class NavBarComponent implements OnInit {
   title = 'pedes-converter';
   deferredPrompt: any;
-
+  isCollapsed: boolean = true;
   constructor() { }
 
   ngOnInit() {

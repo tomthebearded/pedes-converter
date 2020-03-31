@@ -20,16 +20,12 @@
                             aria-required="true">
                     </div>
                     <div class="col-auto">
-                        <select role="listbox" class="selectpicker" [(ngModel)]="stadiumRomani.measure"
-                            name="stadium-romani-measure" (change)="deleteStadiumRomaniResult()" aria-label="measures">
-                            <option role="option" *ngFor="let measure of conversionMeasures" [value]="measure"
-                                [attr.aria-label]="measure">
-                                {{measure}}
-                            </option>
-                        </select>
+                        <ng-select [items]="conversionMeasures" name="stadium-romani-measure" [clearable]="false"
+                            [(ngModel)]="stadiumRomani.measure" (change)="deleteStadiumRomaniResult()">
+                        </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" [disabled]="!stadiumRomani.stadium" role="button"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!stadiumRomani.stadium" role="button"
                             (click)="convertStadiumRomani()" aria-label="convert"
                             [attr.aria-disabled]="!stadiumRomani.stadium">Convert</button>
                     </div>
