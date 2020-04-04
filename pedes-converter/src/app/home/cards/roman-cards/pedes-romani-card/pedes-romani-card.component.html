@@ -1,7 +1,14 @@
 <div class="card">
-    <div class="card-header" id="card-pedes-romani">
-        <h5 class="mb-0">
-            Pedes
+    <div class="card-header" id="card-pedes-romani">        <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            
+        </div>
+    </div>
+        <h5 class="mb-0 font-weight-normal">
+            Pes
             <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pedes-romani"
                 aria-expanded="true" aria-controls="collapse-pedes-romani" (click)="togglePedesRomani()"
                 aria-label="pedes card collapse">
@@ -36,7 +43,7 @@
                             [attr.aria-disabled]="!pedesRomani.pedes">Convert</button>
                     </div>
                     <div class="col-auto">
-                        <input type="number" class="form-control" [ngModel]="pedesRomani.result"
+                        <input type="number" class="form-control " [ngModel]="pedesRomani.result"
                             name="pedes-romani-result" disabled aria-disabled="true" aria-label="result">
                     </div>
                 </div>

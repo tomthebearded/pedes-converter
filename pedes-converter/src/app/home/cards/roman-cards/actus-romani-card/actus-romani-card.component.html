@@ -1,13 +1,19 @@
 <div class="card">
     <div class="card-header" id="card-actus-romani">
-        <h5 class="mb-0">
-            Actus
-            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-actus-romani"
-                aria-expanded="true" aria-controls="collapse-actus-romani" (click)="toggleActusRomani()"
-                aria-label="actus card collapse">
-                <i [class]="actusRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-            </button>
-        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-0 font-weight-normal">
+                    Actus
+                </h5>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-actus-romani"
+                    aria-expanded="true" aria-controls="collapse-actus-romani" (click)="toggleActusRomani()"
+                    aria-label="actus card collapse">
+                    <i [class]="actusRomani.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <div id="collapse-actus-romani" class="collapse" aria-labelledby="card-actus-romani" data-parent="#accordion-roman">
         <div class="card-body">
@@ -30,8 +36,8 @@
                         </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="form-control btn btn-primary" [disabled]="!actusRomani.actus" role="button"
-                            (click)="convertActusRomani()" aria-label="convert"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!actusRomani.actus"
+                            role="button" (click)="convertActusRomani()" aria-label="convert"
                             [attr.aria-disabled]="!actusRomani.actus">Convert</button>
                     </div>
                     <div class="col-auto">

@@ -1,13 +1,19 @@
 <div class="card">
     <div class="card-header" id="card-stadion-ionic">
-        <h5 class="mb-0">
-            Stadion Ionic / Samnic
-            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-stadion-ionic"
-                aria-expanded="true" aria-controls="collapse-stadion-ionic" (click)="toggleStadionIonic()"
-                aria-label="ionic or samnic stadion card collapses">
-                <i [class]="stadionIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-            </button>
-        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-0 font-weight-normal">
+                    Stadion Ionic / Samnic
+                </h5>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-stadion-ionic"
+                    aria-expanded="true" aria-controls="collapse-stadion-ionic" (click)="toggleStadionIonic()"
+                    aria-label="ionic or samnic stadion card collapses">
+                    <i [class]="stadionIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <div id="collapse-stadion-ionic" class="collapse" aria-labelledby="card-stadion-ionic"
         data-parent="#accordion-greek">
@@ -25,8 +31,8 @@
                         </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="form-control btn btn-primary" [disabled]="!stadionIonic.stadion" role="button"
-                            (click)="convertStadionIonic()" aria-label="convert"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!stadionIonic.stadion"
+                            role="button" (click)="convertStadionIonic()" aria-label="convert"
                             [attr.aria-disabled]="!stadionIonic.stadion">Convert</button>
                     </div>
                     <div class="col-auto">

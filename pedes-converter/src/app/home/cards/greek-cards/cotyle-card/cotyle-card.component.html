@@ -1,13 +1,19 @@
 <div class="card">
     <div class="card-header" id="card-cotyle">
-        <h5 class="mb-0">
-            Cotyle
-            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-cotyle"
-                aria-expanded="true" aria-controls="collapse-cotyle" (click)="toggleCotyle()"
-                aria-label="cotyle card collapse">
-                <i [class]="cotyle.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-            </button>
-        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-0 font-weight-normal">
+                    Cotyle
+                </h5>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-cotyle"
+                    aria-expanded="true" aria-controls="collapse-cotyle" (click)="toggleCotyle()"
+                    aria-label="cotyle card collapse">
+                    <i [class]="cotyle.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <div id="collapse-cotyle" class="collapse" aria-labelledby="card-cotyle" data-parent="#accordion-greek">
         <div class="card-body">
@@ -24,8 +30,8 @@
                         </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="form-control btn btn-primary" [disabled]="!cotyle.cotyle" role="button"
-                            (click)="convertCotyle()" aria-label="convert"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!cotyle.cotyle"
+                            role="button" (click)="convertCotyle()" aria-label="convert"
                             [attr.aria-disabled]="!cotyle.cotyle">Convert</button>
                     </div>
                     <div class="col-auto">

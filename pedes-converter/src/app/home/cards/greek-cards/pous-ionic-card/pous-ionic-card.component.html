@@ -1,12 +1,19 @@
 <div class="card">
     <div class="card-header" id="card-pous-ionic">
-        <h5 class="mb-0">Ionic / Samnic Foot
-            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-ionic"
-                aria-expanded="true" aria-controls="collapse-pous-ionic" (click)="togglePousIonic()"
-                aria-label="ionic or samnic foot card collapse">
-                <i [class]="pousIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-            </button>
-        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-0 font-weight-normal">
+                    Ionic / Samnic Foot
+                </h5>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-ionic"
+                    aria-expanded="true" aria-controls="collapse-pous-ionic" (click)="togglePousIonic()"
+                    aria-label="ionic or samnic foot card collapse">
+                    <i [class]="pousIonic.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <div id="collapse-pous-ionic" class="collapse" aria-labelledby="card-pous-ionic" data-parent="#accordion-greek">
         <div class="card-body">
@@ -23,8 +30,8 @@
                         </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="form-control btn btn-primary" [disabled]="!pousIonic.pous" role="button"
-                            (click)="convertPousIonic()" aria-label="convert"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!pousIonic.pous"
+                            role="button" (click)="convertPousIonic()" aria-label="convert"
                             [attr.aria-disabled]="!pousIonic.pous">Convert</button>
                     </div>
                     <div class="col-auto">

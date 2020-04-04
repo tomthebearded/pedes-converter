@@ -131,4 +131,11 @@ a {
   background-color: $primary-color !important;
 }
 
+h5 {
+  padding-top: 5px;
+}
 
+.form-control:focus {
+  border-color: $secondary-color !important;
+  box-shadow: none !important;
+}

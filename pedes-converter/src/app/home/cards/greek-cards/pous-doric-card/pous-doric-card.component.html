@@ -1,12 +1,19 @@
 <div class="card">
     <div class="card-header" id="card-pous-doric">
-        <h5 class="mb-0">Doric Foot
-            <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-doric"
-                aria-expanded="true" aria-controls="collapse-pous-doric" (click)="togglePousDoric()"
-                aria-label="doric foot card collapse">
-                <i [class]="pousDoric.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
-            </button>
-        </h5>
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-0 font-weight-normal">
+                    Doric Foot
+                </h5>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-link float-right" data-toggle="collapse" data-target="#collapse-pous-doric"
+                    aria-expanded="true" aria-controls="collapse-pous-doric" (click)="togglePousDoric()"
+                    aria-label="doric foot card collapse">
+                    <i [class]="pousDoric.collapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <div id="collapse-pous-doric" class="collapse" aria-labelledby="card-pous-doric" data-parent="#accordion-greek">
         <div class="card-body">
@@ -23,8 +30,8 @@
                         </ng-select>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="form-control btn btn-primary" [disabled]="!pousDoric.pous" role="button"
-                            (click)="convertPousDoric()" aria-label="convert"
+                        <button type="button" class="form-control btn btn-primary" [disabled]="!pousDoric.pous"
+                            role="button" (click)="convertPousDoric()" aria-label="convert"
                             [attr.aria-disabled]="!pousDoric.pous">Convert</button>
                     </div>
                     <div class="col-auto">
